@@ -1,34 +1,124 @@
-import React from 'react';
+import React, { useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { twMerge } from "tailwind-merge";
 
-const galleryData = [
-  { color: 'bg-purple-500', img: '/avatars/1.png' },
-  { color: 'bg-orange-500', img: '/avatars/2.png' },
-  { color: 'bg-green-500', img: '/avatars/3.png' },
-  { color: 'bg-yellow-500', img: '/avatars/4.png' },
-  { color: 'bg-sky-500', img: '/avatars/5.png' },
-  { color: 'bg-red-500', img: '/avatars/6.png' },
-];
-
-export default function Gallery() {
+export const Gallery = () => {
   return (
-    <section className="bg-[#392DDD] py-20 px-4 sm:px-6 lg:px-10 rounded-b-3xl">
-      <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Explore our gallery of works</h2>
-        <p className="text-indigo-100 max-w-xl mx-auto mb-12 text-base sm:text-lg">
-          Discover unique avatars created with passion and pixel-perfect detail.
-        </p>
-      </div>
+<section className="relative min-h-screen w-full overflow-hidden bg-black">
+  <h2 className="absolute top-1/2 left-1/2 z-0 -translate-x-1/2 -translate-y-1/2 text-[20vw] font-black text-neutral-800 md:text-[150px]">
+ONE<span className="text-red-600">STEP</span>
+  </h2>
+  <Cards />
+</section>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4 md:gap-5 px-2 sm:px-6">
-        {galleryData.map((item, index) => (
-          <div
-            key={index}
-            className={`aspect-[3/4] rounded-lg flex items-center justify-center ${item.color}`}
-          >
-            <img src={item.img} alt={`avatar-${index}`} className="h-[85%] object-contain" />
-          </div>
-        ))}
-      </div>
-    </section>
   );
-}
+};
+export default Gallery;
+
+const Cards = () => {
+  const containerRef = useRef(null);
+
+  return (
+    <div className="absolute inset-0 z-10" ref={containerRef}>
+      <Card
+        containerRef={containerRef}
+        src="https://images.unsplash.com/photo-1635373670332-43ea883bb081?q=80&w=2781&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Example image"
+        rotate="6deg"
+        top="20%"
+        left="25%"
+        className="w-36 md:w-56"
+      />
+      <Card
+        containerRef={containerRef}
+        src="https://images.unsplash.com/photo-1576174464184-fb78fe882bfd?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Example image"
+        rotate="12deg"
+        top="45%"
+        left="60%"
+        className="w-24 md:w-48"
+      />
+      <Card
+        containerRef={containerRef}
+        src="https://images.unsplash.com/photo-1503751071777-d2918b21bbd9?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Example image"
+        rotate="-6deg"
+        top="20%"
+        left="40%"
+        className="w-52 md:w-80"
+      />
+      <Card
+        containerRef={containerRef}
+        src="https://images.unsplash.com/photo-1620428268482-cf1851a36764?q=80&w=2609&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Example image"
+        rotate="8deg"
+        top="50%"
+        left="40%"
+        className="w-48 md:w-72"
+      />
+      <Card
+        containerRef={containerRef}
+        src="https://images.unsplash.com/photo-1602212096437-d0af1ce0553e?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Example image"
+        rotate="18deg"
+        top="20%"
+        left="65%"
+        className="w-40 md:w-64"
+      />
+      <Card
+        containerRef={containerRef}
+        src="https://images.unsplash.com/photo-1622313762347-3c09fe5f2719?q=80&w=2640&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Example image"
+        rotate="-3deg"
+        top="35%"
+        left="55%"
+        className="w-24 md:w-48"
+      />
+    </div>
+  );
+};
+
+const Card = ({ containerRef, src, alt, top, left, rotate, className }) => {
+  const [zIndex, setZIndex] = useState(0);
+
+  const updateZIndex = () => {
+    const els = document.querySelectorAll(".drag-elements");
+
+    let maxZIndex = -Infinity;
+
+    els.forEach((el) => {
+      let zIndex = parseInt(
+        window.getComputedStyle(el).getPropertyValue("z-index")
+      );
+
+      if (!isNaN(zIndex) && zIndex > maxZIndex) {
+        maxZIndex = zIndex;
+      }
+    });
+
+    setZIndex(maxZIndex + 1);
+  };
+
+  return (
+    <motion.img
+      onMouseDown={updateZIndex}
+      style={{
+        top,
+        left,
+        rotate,
+        zIndex,
+      }}
+      className={twMerge(
+        "drag-elements absolute w-48 bg-neutral-200 p-1 pb-4",
+        className
+      )}
+      src={src}
+      alt={alt}
+      drag
+      dragConstraints={containerRef}
+    //   Uncomment below and remove dragElastic to remove movement after release
+        // dragMomentum={false}
+      dragElastic={1.65}
+    />
+  );
+};

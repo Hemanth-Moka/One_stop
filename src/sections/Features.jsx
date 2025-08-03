@@ -35,7 +35,7 @@ export default function Features() {
       {/* Subtle grid lines in background */}
       <div className="absolute inset-0 pointer-events-none opacity-10 bg-[radial-gradient(#ff0000_1px,transparent_1px)] [background-size:24px_24px]" />
 
-      <div className="max-w-7xl mt-0  mx-auto relative z-10 text-center">
+      <div className="max-w-7xl mx-auto relative z-10 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

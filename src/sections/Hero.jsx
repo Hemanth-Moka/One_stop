@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Features from './Features';
 import Gallery from './Gallery';
+import Services from './services';
 
 
 const Hero = () => {
@@ -9,7 +10,7 @@ const Hero = () => {
       
 
       <div>
-        <section className="py-12 bg-black sm:pb-16 lg:pb-20 xl:pb-24">
+        <section className="py-12 bg-black sm:pb-16 lg:pb-20 xl:pb-15">
           <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
             <div className="relative">
               <div className="lg:w-2/3">
@@ -81,7 +82,8 @@ const Hero = () => {
       </div>
 
       <Gallery />
-      <Features />
+      <Services/>
+      {/* <Features /> */}
     </>
   );
 };
