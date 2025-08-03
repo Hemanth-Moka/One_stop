@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Features from './Features';
 import Gallery from './Gallery';
-import Services from './services';
+import Services from './Services';
 
 
 const Hero = () => {
