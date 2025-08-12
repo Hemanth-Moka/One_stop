@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Features from './Features';
 import Gallery from './Gallery';
+import Services1 from './Services1';
 import Services from './Service'
 
 
@@ -17,7 +18,7 @@ const Hero = () => {
                 <p className="text-sm tracking-widest text-red-400 uppercase">Luxury Salon Experience</p>
                 <h1 className="mt-6 text-4xl text-white sm:mt-10 sm:text-5xl lg:text-6xl xl:text-7xl">
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-rose-700">
-                    OneStep
+                    OneStop
                   </span>{' '}
                   – Complete Family Salon
                 </h1>
@@ -81,7 +82,8 @@ const Hero = () => {
         </section>
       </div>
 
-      <Gallery />
+      {/* <Gallery /> */}
+      <Services1/>
       <Services/>
       {/* <Features /> */}
     </>

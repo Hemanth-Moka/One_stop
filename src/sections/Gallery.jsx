@@ -4,13 +4,12 @@ import { twMerge } from "tailwind-merge";
 
 export const Gallery = () => {
   return (
-<section className="relative min-h-screen w-full overflow-hidden bg-black">
-  <h2 className="absolute top-1/2 left-1/2 z-0 -translate-x-1/2 -translate-y-1/2 text-[20vw] font-black text-neutral-800 md:text-[150px]">
-ONE<span className="text-red-600">STEP</span>
-  </h2>
-  <Cards />
-</section>
-
+    <section className="relative min-h-screen w-full overflow-hidden bg-black">
+      <h2 className="absolute top-1/2 left-1/2 z-0 -translate-x-1/2 -translate-y-1/2 text-[20vw] font-black text-neutral-800 md:text-[150px]">
+        ONE<span className="text-red-600">STEP</span>
+      </h2>
+      <Cards />
+    </section>
   );
 };
 export default Gallery;
@@ -22,8 +21,8 @@ const Cards = () => {
     <div className="absolute inset-0 z-10" ref={containerRef}>
       <Card
         containerRef={containerRef}
-        src="https://images.unsplash.com/photo-1635373670332-43ea883bb081?q=80&w=2781&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        alt="Example image"
+        src="/IMG-20250812-WA0006.jpg"
+        alt="Image 0006"
         rotate="6deg"
         top="20%"
         left="25%"
@@ -31,8 +30,8 @@ const Cards = () => {
       />
       <Card
         containerRef={containerRef}
-        src="https://images.unsplash.com/photo-1576174464184-fb78fe882bfd?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        alt="Example image"
+        src="/IMG-20250812-WA0007.jpg"
+        alt="Image 0007"
         rotate="12deg"
         top="45%"
         left="60%"
@@ -40,8 +39,8 @@ const Cards = () => {
       />
       <Card
         containerRef={containerRef}
-        src="https://images.unsplash.com/photo-1503751071777-d2918b21bbd9?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        alt="Example image"
+        src="/IMG-20250812-WA0008.jpg"
+        alt="Image 0008"
         rotate="-6deg"
         top="20%"
         left="40%"
@@ -49,8 +48,8 @@ const Cards = () => {
       />
       <Card
         containerRef={containerRef}
-        src="https://images.unsplash.com/photo-1620428268482-cf1851a36764?q=80&w=2609&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        alt="Example image"
+        src="/IMG-20250812-WA0009.jpg"
+        alt="Image 0009"
         rotate="8deg"
         top="50%"
         left="40%"
@@ -58,8 +57,8 @@ const Cards = () => {
       />
       <Card
         containerRef={containerRef}
-        src="https://images.unsplash.com/photo-1602212096437-d0af1ce0553e?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        alt="Example image"
+        src="/IMG-20250812-WA0010.jpg"
+        alt="Image 0010"
         rotate="18deg"
         top="20%"
         left="65%"
@@ -67,8 +66,8 @@ const Cards = () => {
       />
       <Card
         containerRef={containerRef}
-        src="https://images.unsplash.com/photo-1622313762347-3c09fe5f2719?q=80&w=2640&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        alt="Example image"
+        src="/IMG-20250812-WA0011.jpg"
+        alt="Image 0011"
         rotate="-3deg"
         top="35%"
         left="55%"
@@ -83,14 +82,12 @@ const Card = ({ containerRef, src, alt, top, left, rotate, className }) => {
 
   const updateZIndex = () => {
     const els = document.querySelectorAll(".drag-elements");
-
     let maxZIndex = -Infinity;
 
     els.forEach((el) => {
       let zIndex = parseInt(
         window.getComputedStyle(el).getPropertyValue("z-index")
       );
-
       if (!isNaN(zIndex) && zIndex > maxZIndex) {
         maxZIndex = zIndex;
       }
@@ -116,8 +113,6 @@ const Card = ({ containerRef, src, alt, top, left, rotate, className }) => {
       alt={alt}
       drag
       dragConstraints={containerRef}
-    //   Uncomment below and remove dragElastic to remove movement after release
-        // dragMomentum={false}
       dragElastic={1.65}
     />
   );

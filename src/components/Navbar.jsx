@@ -9,8 +9,8 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           <a href="#" className="flex shrink-0">
             <img
-              className="w-auto h-9"
-              src="https://img.icons8.com/ios-filled/100/hair-dryer.png"
+              className="w-15 h-15"
+              src="LogoOnestep.jpg"
               alt="OneStep Logo"
             />
           </a>

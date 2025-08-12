@@ -64,6 +64,15 @@ export default function Footer() {
                 Book Now
               </button>
             </form>
+            <p className="mt-4 text-gray-400 text-sm">
+              Or email us at{" "}
+              <a
+                href="mailto:onestopunisexsaloon@gmail.com"
+                className="text-red-500 hover:underline"
+              >
+                onestopunisexsaloon@gmail.com
+              </a>
+            </p>
           </div>
         </div>
 
