@@ -90,14 +90,17 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* Right Side Image */}
-            <div className="mt-10 lg:mt-0 lg:ml-8 flex justify-center">
-              <img
-                className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl"
-                src="/images/IMG-20250812-WA0002.jpg"
-                alt="Salon model"
-              />
-            </div>
+ {/* Right Side Image */}
+<div className="mt-12 lg:mt-0 lg:ml-8 flex justify-center relative">
+  <img
+    className="w-full max-w-xs mt-12 sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl"
+    src="/Hero1.png"
+    alt="Salon model"
+  />
+  {/* Bottom transparency overlay */}
+  <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black/10 to-transparent pointer-events-none"></div>
+</div>
+
           </div>
         </div>
       </section>
