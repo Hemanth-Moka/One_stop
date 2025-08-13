@@ -6,24 +6,22 @@ import Services1 from "./sections/Services1";
 import Gallery from "./sections/Gallery";
 import Pricing from "./pages/Pricing";
 import Haircut from "./pages/Haircut";
-import OnestopGallery from "./pages/OnestopGallery";
-// import Contact from "./sections/Contact"; // Example extra page
+import NotFound from "./pages/NotFound";
+// import OnestopGallery from "./pages/OnestopGallery";
 
-function App() 
-{
-  
+function App() {
   return (
     <Router>
       <Navbar />
       <main>
         <Routes>
           <Route path="/" element={<Hero />} />
-          <Route path="/onestop-gallery" element={<OnestopGallery />} />
           <Route path="/service" element={<Services1 />} />
+          <Route path="/Gallery" element={<Gallery />} />
           <Route path="/Pricing" element={<Pricing />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/haircut" element={<Haircut />} />
-          {/* <Route path="/contact" element={<Contact />} /> */}
+          <Route path="/Haircut" element={<Haircut />} />
+          <Route path="*" element={<NotFound />} />
+          {/* <Route path="/OnestopGallery" element={<OnestopGallery />} /> */}
         </Routes>
       </main>
       <Footer />
