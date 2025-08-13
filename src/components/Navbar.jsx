@@ -46,10 +46,10 @@ export default function Navbar() {
         {expanded && (
           <nav className="md:hidden">
             <div className="flex flex-col pt-8 pb-4 space-y-6">
-              <a href="#" className="text-base text-gray-400 transition hover:text-red-500"> Services </a>
-              <a href="#" className="text-base text-gray-400 transition hover:text-red-500"> Offers </a>
-              <a href="#" className="text-base text-gray-400 transition hover:text-red-500"> About Us </a>
-              <a href="#" className="text-base text-gray-400 transition hover:text-red-500"> Contact </a>
+              <a href="/service" className="text-base text-gray-400 transition hover:text-red-500"> Services </a>
+              <a href="/Gallery" className="text-base text-gray-400 transition hover:text-red-500"> Gallery </a>
+              <a href="/Pricing" className="text-base text-gray-400 transition hover:text-red-500">  Pricing </a>
+              <a href="/OnestopGallery" className="text-base text-gray-400 transition hover:text-red-500"> OnestopGallery </a>
             </div>
           </nav>
         )}
