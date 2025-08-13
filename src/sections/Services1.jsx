@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaCut, FaSpa, FaPaintBrush, FaHandSparkles, FaLeaf, FaBrush } from "react-icons/fa";
+import { FaHandshakeSimple } from "react-icons/fa6";
 
 const Service = () => {
   const services = [
@@ -13,6 +14,7 @@ const Service = () => {
     { title: "Loreal Hair Spa", subtitle: "Deep hair nourishment", Icon: FaSpa },
     { title: "Full Arms D-Tan", subtitle: "Smooth & even skin tone", Icon: FaBrush },
     { title: "Honey Wax", subtitle: "Gentle & natural waxing", Icon: FaLeaf },
+    { title: "Nail Art", subtitle: "Creative & stylish nail designs", Icon: FaHandshakeSimple },
     { title: "Chocolate Wax", subtitle: "Luxury waxing treatment", Icon: FaLeaf },
   ];
 
