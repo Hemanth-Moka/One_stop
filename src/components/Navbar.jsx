@@ -6,14 +6,15 @@ export default function Navbar() {
   return (
     <header className="py-4 bg-black sm:py-6">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
-          <a href="#" className="flex shrink-0">
+        <div className="flex items-center justify-between"> 
+          <a href="/"className="flex shrink-0">
             <img
               className="w-15 h-15"
-              src="LogoOnestep.jpg"
+              src="/logoonestop.jpg"
               alt="OneStep Logo"
             />
           </a>
+         
 
           <div className="flex md:hidden">
             <button
@@ -35,10 +36,10 @@ export default function Navbar() {
           </div>
 
           <nav className="hidden md:flex md:items-center md:space-x-12">
-            <a href="#" className="text-base text-gray-400 transition hover:text-red-500"> Services </a>
-            <a href="#" className="text-base text-gray-400 transition hover:text-red-500"> Offers </a>
-            <a href="#" className="text-base text-gray-400 transition hover:text-red-500"> About Us </a>
-            <a href="#" className="text-base text-gray-400 transition hover:text-red-500"> Contact </a>
+            <a href="/service" className="text-base text-gray-400 transition hover:text-red-500"> Services </a>
+            <a href="/Gallery" className="text-base text-gray-400 transition hover:text-red-500"> Gallery </a>
+            <a href="/Pricing" className="text-base text-gray-400 transition hover:text-red-500"> Pricing </a>
+            <a href="/OnestopGallery" className="text-base text-gray-400 transition hover:text-red-500"> OnestopGallery </a>
           </nav>
         </div>
 

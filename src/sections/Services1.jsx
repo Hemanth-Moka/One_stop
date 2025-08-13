@@ -1,37 +1,111 @@
 import React, { useState, useEffect } from "react";
-import { FaCut, FaSpa, FaPaintBrush, FaHandSparkles, FaLeaf, FaBrush } from "react-icons/fa";
+import {
+  FaCut,
+  FaSpa,
+  FaPaintBrush,
+  FaHandSparkles,
+  FaLeaf,
+  FaBrush,
+} from "react-icons/fa";
 import { FaHandshakeSimple } from "react-icons/fa6";
 
 const Service = () => {
   const services = [
-    { title: "Fruit Facial", subtitle: "Fresh & rejuvenating skin care", Icon: FaLeaf },
-    { title: "Gold Facial", subtitle: "Luxury golden glow", Icon: FaSpa },
-    { title: "Pearl Facial", subtitle: "Radiance & smoothness", Icon: FaSpa },
-    { title: "O3+ D-Tan (Face)", subtitle: "Bright & tan-free skin", Icon: FaBrush },
-    { title: "Manicure", subtitle: "Perfect nails & hands", Icon: FaHandSparkles },
-    { title: "Pedicure", subtitle: "Relaxing foot care", Icon: FaHandSparkles },
-    { title: "Haircut", subtitle: "Trendy & classic styles", Icon: FaCut },
-    { title: "Loreal Hair Spa", subtitle: "Deep hair nourishment", Icon: FaSpa },
-    { title: "Full Arms D-Tan", subtitle: "Smooth & even skin tone", Icon: FaBrush },
-    { title: "Honey Wax", subtitle: "Gentle & natural waxing", Icon: FaLeaf },
-    { title: "Nail Art", subtitle: "Creative & stylish nail designs", Icon: FaHandshakeSimple },
-    { title: "Chocolate Wax", subtitle: "Luxury waxing treatment", Icon: FaLeaf },
+    {
+      title: "Fruit Facial",
+      subtitle: "Fresh & rejuvenating skin care",
+      Icon: FaLeaf,
+      more:
+        "Hi 🌸, I'm interested in Fruit Facial. Can you share more details?",
+    },
+    {
+      title: "Gold Facial",
+      subtitle: "Luxury golden glow",
+      Icon: FaSpa,
+      more:
+        "Hi 🌟, I'm interested in Gold Facial. Can you share more details?",
+    },
+    {
+      title: "Pearl Facial",
+      subtitle: "Radiance & smoothness",
+      Icon: FaSpa,
+      more:
+        "Hi ✨, I'm interested in Pearl Facial. Can you share more details?",
+    },
+    {
+      title: "O3+ D-Tan (Face)",
+      subtitle: "Bright & tan-free skin",
+      Icon: FaBrush,
+      more:
+        "Hi 🌞, I'm interested in O3+ D-Tan (Face). Can you share more details?",
+    },
+    {
+      title: "Manicure",
+      subtitle: "Perfect nails & hands",
+      Icon: FaHandSparkles,
+      more:
+        "Hi 💅, I'm interested in Manicure. Can you share more details?",
+    },
+    {
+      title: "Pedicure",
+      subtitle: "Relaxing foot care",
+      Icon: FaHandSparkles,
+      more:
+        "Hi 🦶, I'm interested in Pedicure. Can you share more details?",
+    },
+    {
+      title: "Haircut",
+      subtitle: "Trendy & classic styles",
+      Icon: FaCut,
+      more: "Hi 💇, I'm interested in Haircut. Can you share more details?",
+    },
+    {
+      title: "Loreal Hair Spa",
+      subtitle: "Deep hair nourishment",
+      Icon: FaSpa,
+      more:
+        "Hi 💆, I'm interested in Loreal Hair Spa. Can you share more details?",
+    },
+    {
+      title: "Full Arms D-Tan",
+      subtitle: "Smooth & even skin tone",
+      Icon: FaBrush,
+      more:
+        "Hi 🤲, I'm interested in Full Arms D-Tan. Can you share more details?",
+    },
+    {
+      title: "Honey Wax",
+      subtitle: "Gentle & natural waxing",
+      Icon: FaLeaf,
+      more: "Hi 🍯, I'm interested in Honey Wax. Can you share more details?",
+    },
+    {
+      title: "Nail Art",
+      subtitle: "Creative & stylish nail designs",
+      Icon: FaHandshakeSimple,
+      more:
+        "Hi 🎨, I'm interested in Nail Art. Can you share more details?",
+    },
+    {
+      title: "Chocolate Wax",
+      subtitle: "Luxury waxing treatment",
+      Icon: FaLeaf,
+      more:
+        "Hi 🍫, I'm interested in Chocolate Wax. Can you share more details?",
+    },
   ];
-
-
 
   const [showAll, setShowAll] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 1024);
-    };
+    const handleResize = () => setIsMobile(window.innerWidth < 1024);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const visibleServices = isMobile && !showAll ? services.slice(0, 4) : services;
+  const visibleServices =
+    isMobile && !showAll ? services.slice(0, 4) : services;
 
   return (
     <div className="p-8 bg-black min-h-screen">
@@ -45,23 +119,6 @@ const Service = () => {
         ))}
       </div>
 
-      {/* Pricing Section */}
-      {/* <div className="mt-12 text-center text-white">
-        <p className="text-lg mb-2">
-          Any 2 — <span className="text-red-500 font-bold">₹1200</span>
-        </p>
-        <p className="text-lg mb-2">
-          Any 3 — <span className="text-red-500 font-bold">₹1500</span>
-        </p>
-        <p className="text-lg mb-2">
-          Any 4 — <span className="text-red-500 font-bold">₹1800</span>
-        </p>
-        <p className="text-lg">
-          Any 5 — <span className="text-red-500 font-bold">₹2200</span>
-        </p>
-      </div> */}
-
-      {/* View More / View Less Button */}
       {isMobile && (
         <div className="mt-6 text-center">
           <button
@@ -76,18 +133,48 @@ const Service = () => {
   );
 };
 
-const Card = ({ title, subtitle, Icon }) => {
+const Card = ({ title, subtitle, Icon, more }) => {
+  // ✅ Full international format for India
+  const whatsappNumber = "7093331210";
+
+  const handleEnquiry = () => {
+    try {
+      // const encodedMessage = encodeURIComponent(more);
+      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${more}`;
+      window.open(whatsappURL, "_blank");
+    } catch (error) {
+      console.error("Error creating WhatsApp link:", error);
+    }
+  };
+
   return (
     <div className="w-full p-5 border border-red-600 relative overflow-hidden group bg-black shadow-md hover:shadow-red-600/50 transition-shadow duration-300">
+      {/* Background hover effect */}
       <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-black translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+
+      {/* Big faded icon in background */}
       <Icon className="absolute z-0 -top-10 -right-10 text-9xl text-red-900 opacity-20 group-hover:opacity-40 group-hover:rotate-12 transition-transform duration-300" />
+
+      {/* Main icon */}
       <Icon className="mb-3 text-3xl text-red-500 group-hover:text-white relative z-10 transition-colors duration-300" />
-      <h3 className="font-semibold text-lg text-white relative z-10 transition-colors duration-300">
+
+      {/* Title */}
+      <h3 className="font-semibold text-lg text-white relative z-10">
         {title}
       </h3>
-      <p className="text-sm text-gray-400 group-hover:text-gray-100 relative z-10 transition-colors duration-300">
+
+      {/* Subtitle */}
+      <p className="text-sm text-gray-400 group-hover:text-gray-100 relative z-10">
         {subtitle}
       </p>
+
+      {/* Enquiry button */}
+      <button
+        onClick={handleEnquiry}
+        className="mt-4 px-4 py-2 bg-red-600 text-white text-sm rounded hover:bg-red-700 transition relative z-10"
+      >
+        Enquiry
+      </button>
     </div>
   );
 };

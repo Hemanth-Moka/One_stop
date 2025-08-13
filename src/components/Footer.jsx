@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:col-span-3 lg:grid-cols-6 gap-y-16 gap-x-12">
           {/* Logo & Description */}
           <div className="col-span-2 md:col-span-3 lg:col-span-2 lg:pr-8">
-            <img className="w-auto h-14" src="/salon_logo.png" alt="One Step Salon" />
+            <img className="w-auto h-14" src="/logoonestop.jpg" alt="One Step Salon" />
             <p className="text-base leading-relaxed text-gray-400 mt-7">
               One Step is your neighborhood unisex family salon — blending modern style with warm care. Haircuts, grooming, facials & more under one roof.
             </p>
@@ -78,7 +78,7 @@ export default function Footer() {
 
         <hr className="mt-12 mb-6 border-gray-700" />
         <p className="text-sm text-center text-gray-500">
-          © {new Date().getFullYear()} One Step Unisex Salon. Designed by Hemanth Moka. All rights reserved.
+          © {new Date().getFullYear()} One Step Unisex Salon. All rights reserved.
         </p>
       </div>
     </section>
