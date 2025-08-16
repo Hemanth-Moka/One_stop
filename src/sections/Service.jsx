@@ -3,6 +3,9 @@ import { motion } from "framer-motion";
 const Services = () => {
   return (
     <section className="bg-black px-4 py-12">
+      <h1 className="text-4xl font-bold text-red-500 mb-10 border-b border-red-700 pb-2">
+        Our Special Services  
+      </h1>
    <div className="flex flex-wrap gap-4 justify-center mx-10">
   <div className="w-fit">
     <Card />

@@ -7,20 +7,15 @@ export default function Gallery() {
     "IMG-20250812-WA0006.jpg",
     "IMG-20250812-WA0007.jpg",
     "IMG-20250812-WA0008.jpg",
-    "IMG-20250812-WA0009.jpg",
-    "IMG-20250812-WA0010.jpg",
-    "IMG-20250812-WA0011.jpg",
-    "IMG-20250812-WA0012.jpg",
-    "IMG-20250812-WA0013.jpg",
-    "IMG-20250812-WA0014.jpg",
-    "IMG-20250812-WA0015.jpg",
+    // "IMG-20250812-WA0009.jpg",
+    "IMG-20250812-WA0015.jpg",  
   ];
 
   return (
     <section className="py-12 bg-black text-white">
       <div className="max-w-7xl mx-auto px-4">
         <h1 className="text-4xl font-bold text-red-500 mb-10 border-b border-red-700 pb-2">
-          Gallery & Services.
+          Gallery
         </h1>
 
         <div className="columns-2 sm:columns-3 md:columns-4 gap-4 space-y-4">

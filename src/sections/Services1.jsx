@@ -12,6 +12,12 @@ import { FaHandshakeSimple } from "react-icons/fa6";
 const Service = () => {
   const services = [
     {
+      title: "Haircut",
+      subtitle: "Trendy & classic styles",
+      Icon: FaCut,
+      more: "Hi 💇, I'm interested in Haircut. Can you share more details?",
+    },
+    {
       title: "Fruit Facial",
       subtitle: "Fresh & rejuvenating skin care",
       Icon: FaLeaf,
@@ -53,12 +59,7 @@ const Service = () => {
       more:
         "Hi 🦶, I'm interested in Pedicure. Can you share more details?",
     },
-    {
-      title: "Haircut",
-      subtitle: "Trendy & classic styles",
-      Icon: FaCut,
-      more: "Hi 💇, I'm interested in Haircut. Can you share more details?",
-    },
+ 
     {
       title: "Loreal Hair Spa",
       subtitle: "Deep hair nourishment",
